@@ -58,12 +58,12 @@ def each_brand(data_cars):
 def avg_price_per_year(data_cars):
     years = data_cars.groupby(by="ano")
 
-    for year, car in years:
-        avg_price = car.preco.mean()
+    for year, group in years:
+        avg_price = group.preco.mean()
 
         print(f"Year: {year}")
         print(f"Avg. Price: {avg_price.__round__(2)}")
-        print(car, "\n")
+        print(group, "\n")
 # avg_price_per_year(data_cars)
 
 
